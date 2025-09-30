@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技产品商城 - 小米风格网站</title>
+    <title>个人网站 - 小米风格设计</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 小米风格变量系统 */
@@ -100,39 +100,129 @@
             background-color: var(--mi-orange);
         }
 
-        .header-actions {
+        /* 简约大气的英雄区域 */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--mi-dark-gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
             display: flex;
             gap: 15px;
         }
 
-        .action-btn {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 15px;
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
             border-radius: 4px;
+            font-weight: bold;
             transition: var(--mi-transition);
+            text-align: center;
         }
 
-        .action-btn:hover {
-            background-color: var(--mi-gray);
-        }
-
-        .search-btn {
+        .btn-primary {
             background-color: var(--mi-orange);
             color: white;
         }
 
-        .search-btn:hover {
+        .btn-primary:hover {
             background-color: var(--mi-dark-orange);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--mi-orange);
+            color: var(--mi-orange);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--mi-orange);
+            color: white;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--mi-orange) 0%, #ff8c00 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 103, 0, 0.2);
+        }
+
+        .profile-circle img {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
         }
 
         /* 轮播图区域 */
+        .portfolio-section {
+            padding: 100px 0;
+            background-color: var(--mi-bg-light);
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--mi-orange);
+        }
+
         .mi-carousel {
             position: relative;
             height: 500px;
             overflow: hidden;
-            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .carousel-inner {
@@ -147,41 +237,25 @@
             background-size: cover;
             background-position: center;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
         }
 
         .carousel-content {
-            max-width: 600px;
-            padding: 0 60px;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             color: white;
         }
 
         .carousel-title {
-            font-size: 48px;
+            font-size: 32px;
             font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
         }
 
         .carousel-desc {
-            font-size: 20px;
-            margin-bottom: 30px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .carousel-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--mi-orange);
-            color: white;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: var(--mi-transition);
-        }
-
-        .carousel-btn:hover {
-            background-color: var(--mi-dark-orange);
-            transform: translateY(-2px);
+            font-size: 18px;
+            max-width: 600px;
         }
 
         .carousel-controls {
@@ -194,8 +268,8 @@
         }
 
         .control-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.5);
             cursor: pointer;
@@ -204,101 +278,93 @@
 
         .control-dot.active {
             background-color: white;
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
 
-        /* 产品展示区 */
-        .section-title {
-            font-size: 28px;
-            text-align: center;
-            margin: 40px 0 30px;
-            position: relative;
+        /* 联系方式区域 */
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background-color: var(--mi-orange);
-        }
-
-        .products-grid {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
-        .product-card {
+        .contact-card {
             background-color: white;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 30px;
             box-shadow: var(--mi-shadow);
+            transition: var(--mi-transition);
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 103, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            color: var(--mi-orange);
+        }
+
+        .contact-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--mi-text-dark);
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: var(--mi-dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            color: var(--mi-orange);
+            font-weight: bold;
             transition: var(--mi-transition);
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .contact-link:hover {
+            color: var(--mi-dark-orange);
         }
 
-        .product-img {
-            height: 200px;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
             background-color: var(--mi-bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-        }
-
-        .product-img img {
-            max-width: 100%;
-            max-height: 160px;
-            object-fit: contain;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .product-desc {
-            color: var(--mi-dark-gray);
-            font-size: 14px;
-            margin-bottom: 15px;
-            height: 40px;
-            overflow: hidden;
-        }
-
-        .product-price {
-            color: var(--mi-orange);
             font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .product-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background-color: var(--mi-orange);
-            color: white;
-            border-radius: 4px;
             transition: var(--mi-transition);
         }
 
-        .product-btn:hover {
-            background-color: var(--mi-dark-orange);
+        .social-link:hover {
+            background-color: var(--mi-orange);
+            color: white;
+            transform: translateY(-5px);
         }
 
         /* 页脚 */
@@ -354,21 +420,50 @@
         }
 
         /* 响应式设计 */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 0;
+            }
+            
+            .hero-content {
+                margin-bottom: 50px;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .profile-circle {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .mi-carousel {
+                height: 400px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
-            .carousel-title {
+            .hero-title {
                 font-size: 36px;
             }
             
-            .carousel-desc {
-                font-size: 18px;
+            .hero-subtitle {
+                font-size: 20px;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .mi-carousel {
+                height: 350px;
             }
         }
     </style>
@@ -377,110 +472,115 @@
     <!-- 导航栏 -->
     <header class="mi-header">
         <div class="container header-container">
-            <a href="#" class="logo">TechStore</a>
+            <a href="#" class="logo">个人网站</a>
             <ul class="nav-menu">
                 <li class="nav-item">首页</li>
-                <li class="nav-item">手机</li>
-                <li class="nav-item">笔记本</li>
-                <li class="nav-item">电视</li>
-                <li class="nav-item">智能家居</li>
-                <li class="nav-item">配件</li>
-                <li class="nav-item">服务</li>
+                <li class="nav-item">关于我</li>
+                <li class="nav-item">作品集</li>
+                <li class="nav-item">联系方式</li>
             </ul>
-            <div class="header-actions">
-                <a href="#" class="action-btn">
-                    <i class="fas fa-user"></i>
-                    <span>登录</span>
-                </a>
-                <a href="#" class="action-btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>购物车</span>
-                </a>
-                <a href="#" class="action-btn search-btn">
-                    <i class="fas fa-search"></i>
-                    <span>搜索</span>
-                </a>
-            </div>
         </div>
     </header>
 
-    <!-- 轮播图 -->
-    <section class="mi-carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item" style="background: linear-gradient(to right, #4a00e0, #8e2de2);">
-                <div class="carousel-content">
-                    <h2 class="carousel-title">全新旗舰手机</h2>
-                    <p class="carousel-desc">突破性创新，重新定义智能手机体验</p>
-                    <a href="#" class="carousel-btn">立即购买</a>
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content">
+                <h1 class="hero-title">张明 | 设计师 & 开发者</h1>
+                <h2 class="hero-subtitle">创造简约而强大的用户体验</h2>
+                <p class="hero-desc">
+                    我是一名专注于UI/UX设计和前端开发的创意专业人士。拥有5年行业经验，致力于打造直观、美观且功能强大的数字产品。我的设计理念融合了美学与实用性，旨在为用户提供卓越的体验。
+                </p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">查看作品</a>
+                    <a href="#contact" class="btn btn-outline">联系我</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background: linear-gradient(to right, #11998e, #38ef7d);">
-                <div class="carousel-content">
-                    <h2 class="carousel-title">智能家居套装</h2>
-                    <p class="carousel-desc">打造您的智慧生活，让科技更懂您</p>
-                    <a href="#" class="carousel-btn">查看详情</a>
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="个人照片">
                 </div>
             </div>
-        </div>
-        <div class="carousel-controls">
-            <div class="control-dot active"></div>
-            <div class="control-dot"></div>
         </div>
     </section>
 
-    <!-- 产品展示区 -->
-    <section class="container">
-        <h2 class="section-title">热门产品</h2>
-        <div class="products-grid">
-            <!-- 产品卡片 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x150?text=旗舰手机" alt="旗舰手机">
+    <!-- 作品集轮播图 -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">精选作品</h2>
+            <div class="mi-carousel">
+                <div class="carousel-inner">
+                    <!-- 项目1 -->
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">电子设计</h3>
+                            <p class="carousel-desc">35</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目2 -->
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">移动应用用户体验优化</h3>
+                            <p class="carousel-desc">123</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目3 -->
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                        <div class="carousel-content">
+                            <h3 class="carousel-title">品牌</h3>
+                            <p class="carousel-desc">为科技网站</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">旗舰智能手机 Pro</h3>
-                    <p class="product-desc">高性能处理器，超清摄像头，长续航电池</p>
-                    <div class="product-price">¥3,299</div>
-                    <a href="#" class="product-btn">加入购物车</a>
-                </div>
-            </div>
-            
-            <!-- 产品卡片 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x150?text=轻薄笔记本" alt="轻薄笔记本">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">超薄笔记本电脑</h3>
-                    <p class="product-desc">轻薄设计，强劲性能，超长续航</p>
-                    <div class="product-price">¥5,999</div>
-                    <a href="#" class="product-btn">加入购物车</a>
-                </div>
-            </div>
-            
-            <!-- 产品卡片 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x150?text=智能手表" alt="智能手表">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">智能运动手表</h3>
-                    <p class="product-desc">健康监测，运动追踪，超长续航</p>
-                    <div class="product-price">¥899</div>
-                    <a href="#" class="product-btn">加入购物车</a>
+                <div class="carousel-controls">
+                    <div class="control-dot active"></div>
+                    <div class="control-dot"></div>
+                    <div class="control-dot"></div>
                 </div>
             </div>
-            
-            <!-- 产品卡片 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x150?text=无线耳机" alt="无线耳机">
+        </div>
+    </section>
+
+    <!-- 联系方式区域 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <div class="contact-grid">
+                <!-- 邮箱 -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">电子邮箱</h3>
+                    <p class="contact-info">contact@example.com</p>
+                    <a href="mailto:contact@example.com" class="contact-link">发送邮件</a>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">真无线蓝牙耳机</h3>
-                    <p class="product-desc">主动降噪，高清音质，舒适佩戴</p>
-                    <div class="product-price">¥399</div>
-                    <a href="#" class="product-btn">加入购物车</a>
+                
+                <!-- 电话 -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">电话</h3>
+                    <p class="contact-info">+86 138 8888 8888</p>
+                    <a href="tel:+8613888888888" class="contact-link">拨打电话</a>
+                </div>
+                
+                <!-- 社交媒体 -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="contact-title">社交媒体</h3>
+                    <p class="contact-info">关注我的最新动态</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -491,45 +591,78 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>帮助中心</h3>
+                    <h3>关于我</h3>
                     <ul class="footer-links">
-                        <li><a href="#">账户管理</a></li>
-                        <li><a href="#">购物指南</a></li>
-                        <li><a href="#">订单操作</a></li>
-                        <li><a href="#">配送方式</a></li>
-                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">个人简介</a></li>
+                        <li><a href="#">专业技能</a></li>
+                        <li><a href="#">工作经历</a></li>
+                        <li><a href="#">教育背景</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>服务支持</h3>
+                    <h3>我的作品</h3>
                     <ul class="footer-links">
-                        <li><a href="#">售后政策</a></li>
-                        <li><a href="#">自助服务</a></li>
-                        <li><a href="#">维修网点</a></li>
-                        <li><a href="#">预约维修</a></li>
-                        <li><a href="#">防伪查询</a></li>
+                        <li><a href="#">UI/UX设计</a></li>
+                        <li><a href="#">网页开发</a></li>
+                        <li><a href="#">品牌设计</a></li>
+                        <li><a href="#">移动应用</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>关于我们</h3>
+                    <h3>博客文章</h3>
                     <ul class="footer-links">
-                        <li><a href="#">公司介绍</a></li>
-                        <li><a href="#">加入我们</a></li>
-                        <li><a href="#">联系我们</a></li>
-                        <li><a href="#">投资者关系</a></li>
-                        <li><a href="#">企业社会责任</a></li>
+                        <li><a href="#">设计思维</a></li>
+                        <li><a href="#">前端技术</a></li>
+                        <li><a href="#">用户体验</a></li>
+                        <li><a href="#">行业趋势</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>关注我们</h3>
+                    <h3>联系方式</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fab fa-weixin"></i> 微信公众号</a></li>
-                        <li><a href="#"><i class="fab fa-weibo"></i> 新浪微博</a></li>
-                        <li><a href="#"><i class="fab fa-tiktok"></i> 抖音</a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+                        <li><a href="tel:+8613888888888">+86 138 8888 8888</a></li>
+                        <li><a href="#">北京市朝阳区</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2023 TechStore 科技产品商城 版权所有 保留所有权利</p>
-                <p>京ICP备12345678号 | 增值电信业务经营许可证：京B2-20230101</p>
+                <p>© 2025 个人网站 版权所有 | 设计灵感来自小米风格</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 轮播图功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const dots = document.querySelectorAll('.control-dot');
+            let currentIndex = 0;
+            const slideCount = document.querySelectorAll('.carousel-item').length;
+            
+            function updateCarousel() {
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // 更新指示点状态
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // 自动轮播
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            }, 5000);
+            
+            // 点击指示点切换
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
