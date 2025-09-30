@@ -33,6 +33,7 @@
             background-color: #fff;
             color: var(--mi-text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -111,6 +112,7 @@
 
         .hero-content {
             max-width: 600px;
+            flex: 1;
         }
 
         .hero-title {
@@ -420,6 +422,21 @@
         }
 
         /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 42px;
+            }
+            
+            .hero-subtitle {
+                font-size: 22px;
+            }
+            
+            .profile-circle {
+                width: 320px;
+                height: 320px;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column;
@@ -429,6 +446,7 @@
             
             .hero-content {
                 margin-bottom: 50px;
+                max-width: 100%;
             }
             
             .hero-actions {
@@ -464,6 +482,45 @@
             
             .mi-carousel {
                 height: 350px;
+            }
+            
+            .carousel-content {
+                padding: 20px;
+            }
+            
+            .carousel-title {
+                font-size: 28px;
+            }
+            
+            .carousel-desc {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-desc {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .mi-carousel {
+                height: 300px;
+            }
+            
+            .contact-card {
+                padding: 20px;
             }
         }
     </style>
@@ -513,8 +570,8 @@
                     <!-- 项目1 -->
                     <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">电子设计</h3>
-                            <p class="carousel-desc">35</p>
+                            <h3 class="carousel-title">电子商务平台设计</h3>
+                            <p class="carousel-desc">为知名零售品牌设计的现代化电商平台，提升用户转化率35%</p>
                         </div>
                     </div>
                     
@@ -522,15 +579,15 @@
                     <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
                             <h3 class="carousel-title">移动应用用户体验优化</h3>
-                            <p class="carousel-desc">123</p>
+                            <p class="carousel-desc">为金融科技公司重新设计的移动应用，用户满意度提升42%</p>
                         </div>
                     </div>
                     
                     <!-- 项目3 -->
                     <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">品牌</h3>
-                            <p class="carousel-desc">为科技网站</p>
+                            <h3 class="carousel-title">企业品牌重塑</h3>
+                            <p class="carousel-desc">为科技初创公司设计的全新品牌形象和网站</p>
                         </div>
                     </div>
                 </div>
@@ -627,7 +684,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 个人网站 版权所有 | 设计灵感来自小米风格</p>
+                <p>© 2023 个人网站 版权所有 | 设计灵感来自小米风格</p>
             </div>
         </div>
     </footer>
