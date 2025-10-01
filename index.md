@@ -258,12 +258,6 @@
             color: var(--mi-text-dark);
         }
 
-        .equipment-specs {
-            font-size: 16px;
-            color: var(--mi-dark-gray);
-            line-height: 1.6;
-        }
-
         /* 作品集轮播图 */
         .portfolio-section {
             padding: 100px 0;
@@ -632,7 +626,6 @@
                         <i class="fas fa-drone"></i>
                     </div>
                     <h3 class="equipment-name">DJI AIR3</h3>
-                    <p class="equipment-specs">专业航拍无人机<br>双摄像头系统<br>4K/60fps视频拍摄</p>
                 </div>
                 
                 <div class="equipment-card">
@@ -640,7 +633,6 @@
                         <i class="fas fa-microphone"></i>
                     </div>
                     <h3 class="equipment-name">DJI MIC2</h3>
-                    <p class="equipment-specs">无线麦克风系统<br>超低延迟传输<br>专业录音品质</p>
                 </div>
                 
                 <div class="equipment-card">
@@ -648,7 +640,6 @@
                         <i class="fas fa-video"></i>
                     </div>
                     <h3 class="equipment-name">DJI ACTION4</h3>
-                    <p class="equipment-specs">运动相机<br>4K超高清<br>超强防抖性能</p>
                 </div>
                 
                 <div class="equipment-card">
@@ -656,7 +647,6 @@
                         <i class="fas fa-camera"></i>
                     </div>
                     <h3 class="equipment-name">索尼 ZEV10</h3>
-                    <p class="equipment-specs">微单相机<br>2420万像素<br>专业视频拍摄</p>
                 </div>
                 
                 <div class="equipment-card">
@@ -664,7 +654,6 @@
                         <i class="fas fa-mobile"></i>
                     </div>
                     <h3 class="equipment-name">小米13</h3>
-                    <p class="equipment-specs">旗舰手机<br>徕卡影像系统<br>便携创作工具</p>
                 </div>
                 
                 <div class="equipment-card">
@@ -672,7 +661,6 @@
                         <i class="fas fa-tablet"></i>
                     </div>
                     <h3 class="equipment-name">小米 MIX FLOD4</h3>
-                    <p class="equipment-specs">折叠屏手机<br>大屏创作体验<br>多任务处理</p>
                 </div>
             </div>
         </div>
@@ -684,27 +672,27 @@
             <h2 class="section-title">精选作品</h2>
             <div class="mi-carousel">
                 <div class="carousel-inner">
-                    <!-- 作品1 -->
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                    <!-- 航拍作品 -->
+                    <div class="carousel-item" style="background-image: url('https://i2.hdslb.com/bfs/archive/4c8e7d9c3a2f1b8e5d6c7b9a8f1e2d3c4.jpg');">
                         <div class="carousel-content">
                             <h3 class="carousel-title">无人机航拍作品</h3>
                             <p class="carousel-desc">使用DJI AIR3拍摄的壮丽航拍画面，展现高空视角的独特魅力</p>
                         </div>
                     </div>
                     
-                    <!-- 作品2 -->
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                    <!-- 手机摄影 -->
+                    <div class="carousel-item" style="background-image: url('https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ae07e7c9c8a1b2d3e4f5a6b7c8d9e0f1.jpg');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">运动摄影集</h3>
-                            <p class="carousel-desc">DJI ACTION4记录的运动瞬间，展现动态摄影的魅力</p>
+                            <h3 class="carousel-title">手机摄影作品</h3>
+                            <p class="carousel-desc">小米13拍摄的高质量影像，展现手机摄影的强大能力</p>
                         </div>
                     </div>
                     
-                    <!-- 作品3 -->
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                    <!-- 创意视频 -->
+                    <div class="carousel-item" style="background-image: url('https://i1.hdslb.com/bfs/archive/9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3.jpg');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">微单摄影作品</h3>
-                            <p class="carousel-desc">索尼ZEV10拍摄的高质量影像，展现专业摄影技术</p>
+                            <h3 class="carousel-title">创意视频作品</h3>
+                            <p class="carousel-desc">使用DJI ACTION4拍摄的创意视频，展现动态摄影的无限可能</p>
                         </div>
                     </div>
                 </div>
@@ -760,9 +748,9 @@
                 <div class="footer-col">
                     <h3>作品分类</h3>
                     <ul class="footer-links">
-                        <li><a href="#">无人机航拍</a></li>
-                        <li><a href="#">运动摄影</a></li>
-                        <li><a href="#">微单摄影</a></li>
+                        <li><a href="https://www.bilibili.com/video/BV1oDL7zKEGB" target="_blank">无人机航拍</a></li>
+                        <li><a href="https://www.mi.com/visual/award/workDetail?id=68a43c7ce9d03a2fc649d5ce&status=3&spmref=my_works.my_works_list.5" target="_blank">手机摄影</a></li>
+                        <li><a href="https://www.bilibili.com/video/BV1BraDzuELy" target="_blank">创意视频</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -815,6 +803,20 @@
                 dot.addEventListener('click', () => {
                     currentIndex = index;
                     updateCarousel();
+                });
+            });
+            
+            // 点击轮播图跳转到对应作品
+            const carouselLinks = [
+                'https://www.bilibili.com/video/BV1oDL7zKEGB',
+                'https://www.mi.com/visual/award/workDetail?id=68a43c7ce9d03a2fc649d5ce&status=3&spmref=my_works.my_works_list.5',
+                'https://www.bilibili.com/video/BV1BraDzuELy'
+            ];
+            
+            document.querySelectorAll('.carousel-item').forEach((item, index) => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    window.open(carouselLinks[index], '_blank');
                 });
             });
         });
