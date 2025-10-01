@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网站 - 小米风格设计</title>
+    <title>ZRJ_DreamSky的个人网站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 小米风格变量系统 */
@@ -111,8 +111,8 @@
         }
 
         .hero-content {
-            max-width: 600px;
             flex: 1;
+            max-width: 600px;
         }
 
         .hero-title {
@@ -195,8 +195,8 @@
             border: 5px solid white;
         }
 
-        /* 轮播图区域 */
-        .portfolio-section {
+        /* 拍摄设备区域 */
+        .equipment-section {
             padding: 100px 0;
             background-color: var(--mi-bg-light);
         }
@@ -217,6 +217,57 @@
             width: 60px;
             height: 3px;
             background-color: var(--mi-orange);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .equipment-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--mi-shadow);
+            transition: var(--mi-transition);
+            text-align: center;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .equipment-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 103, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            color: var(--mi-orange);
+        }
+
+        .equipment-name {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--mi-text-dark);
+        }
+
+        .equipment-specs {
+            font-size: 16px;
+            color: var(--mi-dark-gray);
+            line-height: 1.6;
+        }
+
+        /* 作品集轮播图 */
+        .portfolio-section {
+            padding: 100px 0;
+            background-color: white;
         }
 
         .mi-carousel {
@@ -286,7 +337,7 @@
         /* 联系方式区域 */
         .contact-section {
             padding: 100px 0;
-            background-color: white;
+            background-color: var(--mi-bg-light);
         }
 
         .contact-grid {
@@ -421,7 +472,7 @@
             font-size: 14px;
         }
 
-        /* 响应式设计 */
+        /* 响应式设计 - 修复布局问题 */
         @media (max-width: 1200px) {
             .hero-title {
                 font-size: 42px;
@@ -495,6 +546,10 @@
             .carousel-desc {
                 font-size: 16px;
             }
+            
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -519,8 +574,13 @@
                 height: 300px;
             }
             
-            .contact-card {
+            .contact-card, .equipment-card {
                 padding: 20px;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -529,11 +589,12 @@
     <!-- 导航栏 -->
     <header class="mi-header">
         <div class="container header-container">
-            <a href="#" class="logo">个人网站</a>
+            <a href="#" class="logo">ZRJ_DreamSky的个人网站</a>
             <ul class="nav-menu">
                 <li class="nav-item">首页</li>
                 <li class="nav-item">关于我</li>
-                <li class="nav-item">作品集</li>
+                <li class="nav-item">摄影作品</li>
+                <li class="nav-item">拍摄设备</li>
                 <li class="nav-item">联系方式</li>
             </ul>
         </div>
@@ -541,21 +602,77 @@
 
     <!-- 英雄区域 -->
     <section class="hero">
-        <div class="container" style="display: flex; align-items: center;">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
             <div class="hero-content">
-                <h1 class="hero-title">张明 | 设计师 & 开发者</h1>
-                <h2 class="hero-subtitle">创造简约而强大的用户体验</h2>
+                <h1 class="hero-title">ZRJ_DreamSky | 摄影UP主</h1>
+                <h2 class="hero-subtitle">用镜头记录美好瞬间</h2>
                 <p class="hero-desc">
-                    我是一名专注于UI/UX设计和前端开发的创意专业人士。拥有5年行业经验，致力于打造直观、美观且功能强大的数字产品。我的设计理念融合了美学与实用性，旨在为用户提供卓越的体验。
+                    我是一名热爱摄影和视频创作的UP主，专注于分享高质量的视觉内容。拥有丰富的创作经验，擅长无人机航拍、运动摄影和视频剪辑。希望通过我的作品，为大家带来美的享受和创作灵感。
                 </p>
                 <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary">查看作品</a>
-                    <a href="#contact" class="btn btn-outline">联系我</a>
+                    <a href="https://space.bilibili.com/3461577952987203" target="_blank" class="btn btn-primary">查看作品</a>
+                    <a href="#equipment" class="btn btn-outline">拍摄设备</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="profile-circle">
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="个人照片">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="ZRJ_DreamSky照片">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 拍摄设备区域 -->
+    <section id="equipment" class="equipment-section">
+        <div class="container">
+            <h2 class="section-title">拍摄设备</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-drone"></i>
+                    </div>
+                    <h3 class="equipment-name">DJI AIR3</h3>
+                    <p class="equipment-specs">专业航拍无人机<br>双摄像头系统<br>4K/60fps视频拍摄</p>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3 class="equipment-name">DJI MIC2</h3>
+                    <p class="equipment-specs">无线麦克风系统<br>超低延迟传输<br>专业录音品质</p>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="equipment-name">DJI ACTION4</h3>
+                    <p class="equipment-specs">运动相机<br>4K超高清<br>超强防抖性能</p>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="equipment-name">索尼 ZEV10</h3>
+                    <p class="equipment-specs">微单相机<br>2420万像素<br>专业视频拍摄</p>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <h3 class="equipment-name">小米13</h3>
+                    <p class="equipment-specs">旗舰手机<br>徕卡影像系统<br>便携创作工具</p>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tablet"></i>
+                    </div>
+                    <h3 class="equipment-name">小米 MIX FLOD4</h3>
+                    <p class="equipment-specs">折叠屏手机<br>大屏创作体验<br>多任务处理</p>
                 </div>
             </div>
         </div>
@@ -567,27 +684,27 @@
             <h2 class="section-title">精选作品</h2>
             <div class="mi-carousel">
                 <div class="carousel-inner">
-                    <!-- 项目1 -->
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                    <!-- 作品1 -->
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">电子商务平台设计</h3>
-                            <p class="carousel-desc">为知名零售品牌设计的现代化电商平台，提升用户转化率35%</p>
+                            <h3 class="carousel-title">无人机航拍作品</h3>
+                            <p class="carousel-desc">使用DJI AIR3拍摄的壮丽航拍画面，展现高空视角的独特魅力</p>
                         </div>
                     </div>
                     
-                    <!-- 项目2 -->
+                    <!-- 作品2 -->
                     <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">移动应用用户体验优化</h3>
-                            <p class="carousel-desc">为金融科技公司重新设计的移动应用，用户满意度提升42%</p>
+                            <h3 class="carousel-title">运动摄影集</h3>
+                            <p class="carousel-desc">DJI ACTION4记录的运动瞬间，展现动态摄影的魅力</p>
                         </div>
                     </div>
                     
-                    <!-- 项目3 -->
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
+                    <!-- 作品3 -->
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');">
                         <div class="carousel-content">
-                            <h3 class="carousel-title">企业品牌重塑</h3>
-                            <p class="carousel-desc">为科技初创公司设计的全新品牌形象和网站</p>
+                            <h3 class="carousel-title">微单摄影作品</h3>
+                            <p class="carousel-desc">索尼ZEV10拍摄的高质量影像，展现专业摄影技术</p>
                         </div>
                     </div>
                 </div>
@@ -603,41 +720,26 @@
     <!-- 联系方式区域 -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">联系我</h2>
+            <h2 class="section-title">关注我的频道</h2>
             <div class="contact-grid">
-                <!-- 邮箱 -->
+                <!-- 哔哩哔哩 -->
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fab fa-bilibili"></i>
                     </div>
-                    <h3 class="contact-title">电子邮箱</h3>
-                    <p class="contact-info">contact@example.com</p>
-                    <a href="mailto:contact@example.com" class="contact-link">发送邮件</a>
+                    <h3 class="contact-title">哔哩哔哩</h3>
+                    <p class="contact-info">最新视频作品都在这里</p>
+                    <a href="https://space.bilibili.com/3461577952987203" target="_blank" class="contact-link">前往主页</a>
                 </div>
                 
-                <!-- 电话 -->
+                <!-- 抖音 -->
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+                        <i class="fab fa-tiktok"></i>
                     </div>
-                    <h3 class="contact-title">电话</h3>
-                    <p class="contact-info">+86 138 8888 8888</p>
-                    <a href="tel:+8613888888888" class="contact-link">拨打电话</a>
-                </div>
-                
-                <!-- 社交媒体 -->
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <h3 class="contact-title">社交媒体</h3>
-                    <p class="contact-info">关注我的最新动态</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                    </div>
+                    <h3 class="contact-title">抖音</h3>
+                    <p class="contact-info">短视频创作与分享</p>
+                    <a href="https://www.douyin.com/user/MS4wLjABAAAA5fJci06S9hUnQwYI3bzrFFapkm_qdi3tO4Ea8m_2XzRU4UapTuggLTH7TaDwMz0z?from_tab_name=main" target="_blank" class="contact-link">关注我</a>
                 </div>
             </div>
         </div>
@@ -651,40 +753,36 @@
                     <h3>关于我</h3>
                     <ul class="footer-links">
                         <li><a href="#">个人简介</a></li>
-                        <li><a href="#">专业技能</a></li>
-                        <li><a href="#">工作经历</a></li>
-                        <li><a href="#">教育背景</a></li>
+                        <li><a href="#">创作理念</a></li>
+                        <li><a href="#">合作经历</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>我的作品</h3>
+                    <h3>作品分类</h3>
                     <ul class="footer-links">
-                        <li><a href="#">UI/UX设计</a></li>
-                        <li><a href="#">网页开发</a></li>
-                        <li><a href="#">品牌设计</a></li>
-                        <li><a href="#">移动应用</a></li>
+                        <li><a href="#">无人机航拍</a></li>
+                        <li><a href="#">运动摄影</a></li>
+                        <li><a href="#">微单摄影</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>博客文章</h3>
+                    <h3>设备评测</h3>
                     <ul class="footer-links">
-                        <li><a href="#">设计思维</a></li>
-                        <li><a href="#">前端技术</a></li>
-                        <li><a href="#">用户体验</a></li>
-                        <li><a href="#">行业趋势</a></li>
+                        <li><a href="#">DJI设备</a></li>
+                        <li><a href="#">索尼相机</a></li>
+                        <li><a href="#">小米手机</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>联系方式</h3>
+                    <h3>商务合作</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@example.com">contact@example.com</a></li>
-                        <li><a href="tel:+8613888888888">+86 138 8888 8888</a></li>
-                        <li><a href="#">北京市朝阳区</a></li>
+                        <li><a href="mailto:contact@example.com">合作邮箱</a></li>
+                        <li><a href="tel:+8613888888888">联系电话</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2023 个人网站 版权所有 | 设计灵感来自小米风格</p>
+                <p>© 2024 ZRJ_DreamSky个人网站 版权所有</p>
             </div>
         </div>
     </footer>
